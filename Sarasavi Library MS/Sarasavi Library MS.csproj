@@ -149,12 +149,6 @@
     <Compile Include="Entity\Notification.cs" />
     <Compile Include="Entity\Reservation.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,9 +243,6 @@
     <Compile Include="Service\ServiceImpl\UserServiceImpl.cs" />
     <Compile Include="Utils\IDGenerator.cs" />
     <Compile Include="Utils\UIHelpers.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Sarasavi Library MS/Sarasavi Library MS.csproj" Id="24b32cb7-7e8a-45e2-89c7-b39c86ab26f8">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+</Solution>

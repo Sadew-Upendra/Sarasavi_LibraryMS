@@ -1,0 +1,219 @@
+-- ============================================================
+-- Sarasavi Library Management System - SQL Server Script
+-- ============================================================
+USE master;
+GO
+
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'SarasaviLibraryDB')
+BEGIN
+    ALTER DATABASE SarasaviLibraryDB SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE SarasaviLibraryDB;
+END
+GO
+
+CREATE DATABASE SarasaviLibraryDB;
+GO
+USE SarasaviLibraryDB;
+GO
+
+-- ============================================================
+-- Login Table
+-- ============================================================
+CREATE TABLE LoginTbl (
+    LoginID   INT IDENTITY(1,1) PRIMARY KEY,
+    Username  VARCHAR(20)  NOT NULL UNIQUE,
+    Password  VARCHAR(100) NOT NULL,
+    Role      VARCHAR(10)  NOT NULL DEFAULT 'user'
+);
+GO
+
+INSERT INTO LoginTbl (Username, Password, Role) VALUES ('admin', 'admin123', 'admin');
+GO
+
+-- ============================================================
+-- Users Table
+-- ============================================================
+CREATE TABLE Users (
+    UserID      VARCHAR(10)  PRIMARY KEY,
+    FullName    VARCHAR(100) NOT NULL,
+    Sex         VARCHAR(10)  NOT NULL,
+    NIC         VARCHAR(20)  NOT NULL UNIQUE,
+    TelephoneNo VARCHAR(15),
+    Address     VARCHAR(255),
+    UserType    VARCHAR(10)  NOT NULL DEFAULT 'Member'
+);
+GO
+
+INSERT INTO Users VALUES
+('U-0001','Kavinda Perera', 'Male',   '199012345678','0771234567','12, Galle Road, Colombo 03','Member'),
+('U-0002','Nimali Silva',   'Female', '199587654321','0779876543','45, Kandy Road, Peradeniya','Member'),
+('U-0003','Roshan Fernando','Male',   '198876543210','0752345678','7, Temple Road, Nugegoda',  'Visitor');
+GO
+
+INSERT INTO LoginTbl (Username, Password, Role) VALUES
+('U-0001','199012345678','user'),
+('U-0002','199587654321','user'),
+('U-0003','198876543210','user');
+GO
+
+-- ============================================================
+-- Books Table
+-- ============================================================
+CREATE TABLE Books (
+    BookID         VARCHAR(10)  PRIMARY KEY,
+    Classification CHAR(1)      NOT NULL,
+    Title          VARCHAR(255) NOT NULL,
+    Author         VARCHAR(255) NOT NULL,
+    Publisher      VARCHAR(100),
+    ISBN           VARCHAR(30)
+);
+GO
+
+INSERT INTO Books VALUES
+('A0001','A','Access 2022 All-in-One Desk Reference for Dummies','Alan Simpson','Wiley','978-0-470-03649-5'),
+('A0002','A','Artificial Intelligence: A Modern Approach','Stuart Russell','Pearson','978-0-13-468599-1'),
+('B0001','B','Clean Code','Robert C. Martin','Prentice Hall','978-0-13-235088-4'),
+('C0001','C','Design Patterns: Elements of Reusable Object-Oriented Software','Gang of Four','Addison-Wesley','978-0-20-163361-5'),
+('D0001','D','The Pragmatic Programmer','David Thomas','Addison-Wesley','978-0-13-595705-9');
+GO
+
+-- ============================================================
+-- Copies Table
+-- ============================================================
+CREATE TABLE Copies (
+    CopyID   VARCHAR(15) PRIMARY KEY,
+    BookID   VARCHAR(10) NOT NULL,
+    CopyType VARCHAR(15) NOT NULL DEFAULT 'Borrowable',
+    Status   VARCHAR(15) NOT NULL DEFAULT 'Available',
+    CONSTRAINT FK_Copies_Books FOREIGN KEY (BookID) REFERENCES Books(BookID)
+);
+GO
+
+INSERT INTO Copies VALUES
+('A00011','A0001','Borrowable','Available'),
+('A00012','A0001','Reference', 'Available'),
+('A00013','A0001','Borrowable','Available'),
+('A00021','A0002','Borrowable','Available'),
+('A00022','A0002','Borrowable','Available'),
+('B00011','B0001','Borrowable','Available'),
+('B00012','B0001','Borrowable','Available'),
+('C00011','C0001','Borrowable','Available'),
+('C00012','C0001','Reference', 'Available'),
+('D00011','D0001','Borrowable','Available');
+GO
+
+-- ============================================================
+-- Loans Table
+-- ============================================================
+CREATE TABLE Loans (
+    LoanID     INT IDENTITY(1,1) PRIMARY KEY,
+    UserID     VARCHAR(10) NOT NULL,
+    CopyID     VARCHAR(15) NOT NULL,
+    LoanDate   DATE        NOT NULL,
+    DueDate    DATE        NOT NULL,
+    ReturnDate DATE        NULL,
+    Status     VARCHAR(15) NOT NULL DEFAULT 'Active',
+    CONSTRAINT FK_Loans_Users  FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    CONSTRAINT FK_Loans_Copies FOREIGN KEY (CopyID) REFERENCES Copies(CopyID)
+);
+GO
+
+-- ============================================================
+-- Reservations Table
+-- ============================================================
+CREATE TABLE Reservations (
+    ReservationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID        VARCHAR(10) NOT NULL,
+    BookID        VARCHAR(10) NOT NULL,
+    ReservedDate  DATE        NOT NULL,
+    Status        VARCHAR(15) NOT NULL DEFAULT 'Active',
+    CONSTRAINT FK_Res_Users FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    CONSTRAINT FK_Res_Books FOREIGN KEY (BookID) REFERENCES Books(BookID)
+);
+GO
+
+-- ============================================================
+-- Notifications Table
+-- ============================================================
+CREATE TABLE Notifications (
+    NotificationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID         VARCHAR(10)  NULL,
+    Message        VARCHAR(500) NOT NULL,
+    CreatedDate    DATETIME     NOT NULL DEFAULT GETDATE(),
+    IsRead         BIT          NOT NULL DEFAULT 0
+);
+GO
+
+-- ============================================================
+-- Stored Procedure: Get Next UserID
+-- ============================================================
+CREATE PROCEDURE GetNextUserID
+AS
+BEGIN
+    DECLARE @maxNum INT = 0;
+    SELECT @maxNum = ISNULL(MAX(CAST(SUBSTRING(UserID,3,4) AS INT)), 0) FROM Users;
+    SELECT 'U-' + RIGHT('0000' + CAST(@maxNum + 1 AS VARCHAR), 4) AS NextUserID;
+END;
+GO
+
+-- ============================================================
+-- Stored Procedure: Get Next BookID for a Classification
+-- ============================================================
+CREATE PROCEDURE GetNextBookID
+    @Classification CHAR(1)
+AS
+BEGIN
+    DECLARE @maxNum INT = 0;
+    SELECT @maxNum = ISNULL(MAX(CAST(SUBSTRING(BookID,2,4) AS INT)), 0)
+    FROM Books WHERE Classification = @Classification;
+    SELECT @Classification + RIGHT('0000' + CAST(@maxNum + 1 AS VARCHAR), 4) AS NextBookID;
+END;
+GO
+
+-- ============================================================
+-- View: Active Loans with Details
+-- ============================================================
+CREATE VIEW vw_ActiveLoans AS
+SELECT
+    L.LoanID, L.UserID, U.FullName, L.CopyID, C.BookID,
+    B.Title, L.LoanDate, L.DueDate, L.ReturnDate, L.Status,
+    CASE WHEN L.DueDate < CAST(GETDATE() AS DATE) AND L.Status = 'Active'
+         THEN 'Overdue' ELSE L.Status END AS DisplayStatus
+FROM Loans L
+JOIN Users U  ON L.UserID = U.UserID
+JOIN Copies C ON L.CopyID = C.CopyID
+JOIN Books B  ON C.BookID = B.BookID;
+GO
+
+-- ============================================================
+-- ============================================================
+
+-- TABLE: Classifications
+-- ============================================================
+CREATE TABLE IF NOT EXISTS Classifications (
+    ClassificationCode CHAR(1) PRIMARY KEY,
+    ClassificationName VARCHAR(100) NOT NULL,
+    Description VARCHAR(255),
+);
+ 
+-- ============================================================
+
+-- SEED DATA: Classifications
+-- ============================================================
+INSERT INTO Classifications (ClassificationCode, ClassificationName, Description) VALUES
+('A', 'Arts & Humanities',        'Literature, History, Philosophy, Arts'),
+('B', 'Business & Economics',     'Finance, Management, Marketing, Economics'),
+('C', 'Computer Science & IT',    'Programming, Networking, Database, AI'),
+('D', 'Science & Technology',     'Physics, Chemistry, Biology, Engineering'),
+('E', 'Education',                'Teaching, Curriculum, Pedagogy'),
+('F', 'Fiction & Literature',     'Novels, Short stories, Poetry'),
+('G', 'Geography & Travel',       'Maps, Travel Guides, Geology'),
+('H', 'Health & Medicine',        'Medical, Nursing, Public Health'),
+('L', 'Law & Legislation',        'Civil Law, Criminal Law, International Law'),
+('M', 'Mathematics',              'Calculus, Statistics, Algebra'),
+('P', 'Psychology',               'Behavioral Science, Counseling, Psychiatry'),
+('S', 'Social Science',           'Sociology, Political Science, Anthropology'),
+('R', 'Reference',                'Encyclopedias, Dictionaries, Almanacs'),
+('T', 'Technology & Engineering', 'Mechanical, Civil, Electrical Engineering');
+ 
+-- ============================================================

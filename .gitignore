@@ -1,0 +1,221 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options
+.vs/
+
+# Visual Studio Code cache/options
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local History for Visual Studio
+.localhistory/
+
+# Visual Studio temporary files
+.tmp/
+*.tmp
+
+# BLL/Resharper unneeded files
+_ReSharper*/
+*.DotSettings.user
+
+# Entity Framework
+*.edmx.diagram
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files
+*.mdf
+*.ldf
+*.ndf
+
+# SQL Server
+App_Data/
+
+# NuGet
+.nuget/
+packages/
+.nupkg
+*.nupkg
+*.snupkg
+!.nuget/packages
+
+# NPM
+node_modules/
+
+# TypeScript
+*.ts
+!*.tsx
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+
+# Code coverage
+coverage/
+opencover/
+
+# Temporary build files
+obj/
+bin/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor backups
+*.bak
+*.backup
+*~
+
+# Rider plugins
+.idea/plugins
+.idea/runConfigurations
+
+# Deployment files
+*.PublishSettings
+*.azurePubxml
+
+# Local user-specific settings
+LocalSettings.xml
+*.config.local
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Password and secrets (never commit)
+*.key
+*.pem
+secrets.json
+appsettings.secrets.json
+
+# Build artifacts
+artifacts/
+dist/
+
+# Installation files
+*.exe
+*.msi
+*.appx
+*.msixbundle
+*.msix
+
+# Documentation
+docs/_build/
+site/
+
+# IDE settings that vary per developer
+.editorconfig.user
+
+# VS Live Share
+.vsls.json
+
+# OpenCover
+OpenCover/
+
+# NCrunch
+_NCrunch_*
+*.ncrunchcache
+*.ncrunchproject
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/Help/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# FxCop Results
+FxCopResults.xml
+
+# NCrunch
+.ncrunch*
+*ncrunch*
+nCrunchTemp_*
+
+# MightyMoose
+*.mm
+*.mmx
+*.mmc
+
+# Telerik's JustMock testing framework
+.JustMock/
+
+# VS dynamic analysis
+*.rpt
+*.rsuser
+
+# Hypothesis
+.hypothesis/
+
+# dotenv files
+.env
+
+# pyenv files
+.python-version
+
+# Dependency lock files (for .NET projects)
+paket.lock
+
+# Git internal
+.git/
+.gitattributes
+
+# VS Code extensions
+extensions/
+
+# macOS specific
+.AppleDouble
+.LSOverride
+*.playground
+
+# Linux specific
+.directory
+
+# Windows specific
+$RECYCLE.BIN/
+ehthumbs.db

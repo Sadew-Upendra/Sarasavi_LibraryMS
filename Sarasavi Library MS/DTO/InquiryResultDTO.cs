@@ -19,5 +19,7 @@ namespace Sarasavi_Library_MS.DTO
         public int ReferenceCopies { get; set; }
         public int ReservedCopies { get; set; }
         public string AvailabilityStatus { get; set; }
+
+        public List<CopyDTO> CopyList { get; set; } = new List<CopyDTO>();
     }
 }

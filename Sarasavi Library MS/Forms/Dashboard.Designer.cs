@@ -41,31 +41,32 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.sataPanel6 = new SATAUiFramework.SATAPanel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblOverdueLoans = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.sataPanel5 = new SATAUiFramework.SATAPanel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblActiveLoans = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.sataPanel4 = new SATAUiFramework.SATAPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblReservations = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.sataPanel3 = new SATAUiFramework.SATAPanel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotalUsers = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotalCopies = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalBooks = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lstNotifications = new System.Windows.Forms.ListBox();
             this.sataPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.sataPanel6.SuspendLayout();
@@ -80,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.contentPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +150,7 @@
             borderRadius2.TopRight = 10;
             this.sataPanel6.BorderRadius = borderRadius2;
             this.sataPanel6.BorderThickness = 0;
-            this.sataPanel6.Controls.Add(this.label15);
+            this.sataPanel6.Controls.Add(this.lblOverdueLoans);
             this.sataPanel6.Controls.Add(this.pictureBox8);
             this.sataPanel6.Controls.Add(this.label16);
             this.sataPanel6.Location = new System.Drawing.Point(287, 190);
@@ -157,16 +159,16 @@
             this.sataPanel6.Size = new System.Drawing.Size(227, 130);
             this.sataPanel6.TabIndex = 20;
             // 
-            // label15
+            // lblOverdueLoans
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(102, 54);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 28);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "0";
+            this.lblOverdueLoans.AutoSize = true;
+            this.lblOverdueLoans.BackColor = System.Drawing.Color.Transparent;
+            this.lblOverdueLoans.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOverdueLoans.Location = new System.Drawing.Point(102, 54);
+            this.lblOverdueLoans.Name = "lblOverdueLoans";
+            this.lblOverdueLoans.Size = new System.Drawing.Size(25, 28);
+            this.lblOverdueLoans.TabIndex = 6;
+            this.lblOverdueLoans.Text = "0";
             // 
             // pictureBox8
             // 
@@ -201,7 +203,7 @@
             borderRadius3.TopRight = 10;
             this.sataPanel5.BorderRadius = borderRadius3;
             this.sataPanel5.BorderThickness = 0;
-            this.sataPanel5.Controls.Add(this.label13);
+            this.sataPanel5.Controls.Add(this.lblActiveLoans);
             this.sataPanel5.Controls.Add(this.pictureBox7);
             this.sataPanel5.Controls.Add(this.label14);
             this.sataPanel5.Location = new System.Drawing.Point(20, 190);
@@ -210,16 +212,16 @@
             this.sataPanel5.Size = new System.Drawing.Size(227, 130);
             this.sataPanel5.TabIndex = 19;
             // 
-            // label13
+            // lblActiveLoans
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(102, 54);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 28);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "0";
+            this.lblActiveLoans.AutoSize = true;
+            this.lblActiveLoans.BackColor = System.Drawing.Color.Transparent;
+            this.lblActiveLoans.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveLoans.Location = new System.Drawing.Point(102, 54);
+            this.lblActiveLoans.Name = "lblActiveLoans";
+            this.lblActiveLoans.Size = new System.Drawing.Size(25, 28);
+            this.lblActiveLoans.TabIndex = 6;
+            this.lblActiveLoans.Text = "0";
             // 
             // pictureBox7
             // 
@@ -254,7 +256,7 @@
             borderRadius4.TopRight = 10;
             this.sataPanel4.BorderRadius = borderRadius4;
             this.sataPanel4.BorderThickness = 0;
-            this.sataPanel4.Controls.Add(this.label12);
+            this.sataPanel4.Controls.Add(this.lblReservations);
             this.sataPanel4.Controls.Add(this.pictureBox6);
             this.sataPanel4.Controls.Add(this.label8);
             this.sataPanel4.Location = new System.Drawing.Point(821, 20);
@@ -263,16 +265,16 @@
             this.sataPanel4.Size = new System.Drawing.Size(227, 130);
             this.sataPanel4.TabIndex = 16;
             // 
-            // label12
+            // lblReservations
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(102, 54);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 28);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "0";
+            this.lblReservations.AutoSize = true;
+            this.lblReservations.BackColor = System.Drawing.Color.Transparent;
+            this.lblReservations.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservations.Location = new System.Drawing.Point(102, 54);
+            this.lblReservations.Name = "lblReservations";
+            this.lblReservations.Size = new System.Drawing.Size(25, 28);
+            this.lblReservations.TabIndex = 6;
+            this.lblReservations.Text = "0";
             // 
             // pictureBox6
             // 
@@ -307,7 +309,7 @@
             borderRadius5.TopRight = 10;
             this.sataPanel3.BorderRadius = borderRadius5;
             this.sataPanel3.BorderThickness = 0;
-            this.sataPanel3.Controls.Add(this.label11);
+            this.sataPanel3.Controls.Add(this.lblTotalUsers);
             this.sataPanel3.Controls.Add(this.pictureBox5);
             this.sataPanel3.Controls.Add(this.label7);
             this.sataPanel3.Location = new System.Drawing.Point(554, 20);
@@ -316,16 +318,16 @@
             this.sataPanel3.Size = new System.Drawing.Size(227, 130);
             this.sataPanel3.TabIndex = 17;
             // 
-            // label11
+            // lblTotalUsers
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(102, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 28);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "3";
+            this.lblTotalUsers.AutoSize = true;
+            this.lblTotalUsers.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalUsers.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalUsers.Location = new System.Drawing.Point(102, 55);
+            this.lblTotalUsers.Name = "lblTotalUsers";
+            this.lblTotalUsers.Size = new System.Drawing.Size(22, 28);
+            this.lblTotalUsers.TabIndex = 6;
+            this.lblTotalUsers.Text = "3";
             // 
             // pictureBox5
             // 
@@ -360,7 +362,7 @@
             borderRadius6.TopRight = 10;
             this.sataPanel2.BorderRadius = borderRadius6;
             this.sataPanel2.BorderThickness = 0;
-            this.sataPanel2.Controls.Add(this.label10);
+            this.sataPanel2.Controls.Add(this.lblTotalCopies);
             this.sataPanel2.Controls.Add(this.pictureBox4);
             this.sataPanel2.Controls.Add(this.label6);
             this.sataPanel2.Location = new System.Drawing.Point(287, 20);
@@ -369,16 +371,16 @@
             this.sataPanel2.Size = new System.Drawing.Size(227, 130);
             this.sataPanel2.TabIndex = 18;
             // 
-            // label10
+            // lblTotalCopies
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(95, 54);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 28);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "10";
+            this.lblTotalCopies.AutoSize = true;
+            this.lblTotalCopies.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalCopies.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCopies.Location = new System.Drawing.Point(95, 54);
+            this.lblTotalCopies.Name = "lblTotalCopies";
+            this.lblTotalCopies.Size = new System.Drawing.Size(35, 28);
+            this.lblTotalCopies.TabIndex = 6;
+            this.lblTotalCopies.Text = "10";
             // 
             // pictureBox4
             // 
@@ -414,7 +416,7 @@
             this.sataPanel1.BorderRadius = borderRadius7;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox3);
-            this.sataPanel1.Controls.Add(this.label9);
+            this.sataPanel1.Controls.Add(this.lblTotalBooks);
             this.sataPanel1.Controls.Add(this.label5);
             this.sataPanel1.Location = new System.Drawing.Point(20, 20);
             this.sataPanel1.Margin = new System.Windows.Forms.Padding(20);
@@ -433,16 +435,16 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // label9
+            // lblTotalBooks
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(99, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 28);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "5";
+            this.lblTotalBooks.AutoSize = true;
+            this.lblTotalBooks.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalBooks.Font = new System.Drawing.Font("Kristen ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBooks.Location = new System.Drawing.Point(99, 57);
+            this.lblTotalBooks.Name = "lblTotalBooks";
+            this.lblTotalBooks.Size = new System.Drawing.Size(23, 28);
+            this.lblTotalBooks.TabIndex = 5;
+            this.lblTotalBooks.Text = "5";
             // 
             // label5
             // 
@@ -458,6 +460,7 @@
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.Color.Lavender;
+            this.contentPanel.Controls.Add(this.lstNotifications);
             this.contentPanel.Location = new System.Drawing.Point(-1, 450);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(1110, 211);
@@ -476,6 +479,15 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1071, 356);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // lstNotifications
+            // 
+            this.lstNotifications.FormattingEnabled = true;
+            this.lstNotifications.ItemHeight = 16;
+            this.lstNotifications.Location = new System.Drawing.Point(946, 34);
+            this.lstNotifications.Name = "lstNotifications";
+            this.lstNotifications.Size = new System.Drawing.Size(120, 84);
+            this.lstNotifications.TabIndex = 23;
             // 
             // Dashboard
             // 
@@ -510,6 +522,7 @@
             this.sataPanel1.ResumeLayout(false);
             this.sataPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.contentPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -522,30 +535,31 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label18;
         private SATAUiFramework.SATAPanel sataPanel6;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblOverdueLoans;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label16;
         private SATAUiFramework.SATAPanel sataPanel5;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblActiveLoans;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label14;
         private SATAUiFramework.SATAPanel sataPanel4;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblReservations;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label8;
         private SATAUiFramework.SATAPanel sataPanel3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTotalUsers;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label7;
         private SATAUiFramework.SATAPanel sataPanel2;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTotalCopies;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label6;
         private SATAUiFramework.SATAPanel sataPanel1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotalBooks;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ListBox lstNotifications;
     }
 }

@@ -242,6 +242,12 @@
     <Compile Include="Service\ServiceImpl\ReturnServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\UserServiceImpl.cs" />
     <Compile Include="Utils\IDGenerator.cs" />
+    <Compile Include="Utils\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\UIHelpers.cs" />
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -291,6 +297,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Utils\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -72,7 +72,14 @@ namespace Sarasavi_Library_MS.Service.ServiceImpl
                 LoanedCopies = loaned,
                 ReferenceCopies = reference,
                 ReservedCopies = reserved,
-                AvailabilityStatus = availability
+                AvailabilityStatus = availability,
+
+                CopyList = copies.Select(c => new CopyDTO
+                {
+                    CopyID = c.CopyID,
+                    Status = c.Status,
+                    CopyType = c.CopyType
+                }).ToList()
             };
         }
     }

@@ -18,5 +18,8 @@ namespace Sarasavi_Library_MS.DAO
         string GetNextUserId();
         bool SaveLogin(string username, string password, string role);
         bool DeleteLogin(string username);
+
+        bool UpdatePassword(string username, string currentPassword, string newPassword);
+        string GetPasswordByUsername(string username);
     }
 }

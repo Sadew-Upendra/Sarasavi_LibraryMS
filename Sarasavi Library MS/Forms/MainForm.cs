@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sarasavi_Library_MS.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace Sarasavi_Library_MS.Forms
 {
     public partial class MainForm : Form
     {
+        private string currentUserRole;
 
-        public MainForm()
+        public MainForm(string userName)
         {
             InitializeComponent();
+            this.currentUserRole = userName;
             MainFormOpen();
         }
 
@@ -122,7 +125,7 @@ namespace Sarasavi_Library_MS.Forms
 
             try
             {
-                ReservationForm reserveForm = new ReservationForm();
+                ReservationForm reserveForm = new ReservationForm(this.currentUserRole);
                 LoadForm(reserveForm);
             }
             catch (Exception ex)

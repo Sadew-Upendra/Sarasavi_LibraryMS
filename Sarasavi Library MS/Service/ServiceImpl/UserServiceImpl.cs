@@ -69,7 +69,7 @@ namespace Sarasavi_Library_MS.Service.ServiceImpl
         public string ValidateLogin(string username, string password) =>
             _userDAO.ValidateLogin(username, password);
 
-        private static UserDTO ToDTO(User u) => new UserDTO
+        private UserDTO ToDTO(User u) => new UserDTO
         {
             UserID = u.UserID,
             FullName = u.FullName,
@@ -77,7 +77,14 @@ namespace Sarasavi_Library_MS.Service.ServiceImpl
             NIC = u.NIC,
             TelephoneNo = u.TelephoneNo,
             Address = u.Address,
-            UserType = u.UserType
+            UserType = u.UserType,
+            UserName = u.UserID,
+            Password = _userDAO.GetPasswordByUsername(u.UserID)
         };
+
+        public bool UpdatePassword(string userId, string currentPassword, string newPassword)
+        {
+            return _userDAO.UpdatePassword(userId, currentPassword, newPassword);
+        }
     }
 }

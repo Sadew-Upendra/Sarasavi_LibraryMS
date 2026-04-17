@@ -137,6 +137,45 @@ namespace Sarasavi_Library_MS.DAO.DAOImpl
             }
         }
 
+        public bool UpdatePassword(string username, string currentPassword, string newPassword)
+        {
+            const string checkSql = "SELECT COUNT(1) FROM LoginTbl WHERE Username=@Username AND Password=@CurrentPassword";
+
+            const string updateSql = "UPDATE LoginTbl SET Password=@NewPassword WHERE Username=@Username";
+
+            using (var con = DBConnection.Instance.GetConnection())
+            {
+                using (var cmdCheck = new SqlCommand(checkSql, con))
+                {
+                    cmdCheck.Parameters.AddWithValue("@Username", username);
+                    cmdCheck.Parameters.AddWithValue("@CurrentPassword", currentPassword);
+
+                    int exists = (int)cmdCheck.ExecuteScalar();
+                    if (exists == 0) return false; 
+                }
+
+                using (var cmdUpdate = new SqlCommand(updateSql, con))
+                {
+                    cmdUpdate.Parameters.AddWithValue("@Username", username);
+                    cmdUpdate.Parameters.AddWithValue("@NewPassword", newPassword);
+
+                    return cmdUpdate.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public string GetPasswordByUsername(string username)
+        {
+            const string sql = "SELECT Password FROM LoginTbl WHERE Username=@Username";
+            using (var con = DBConnection.Instance.GetConnection())
+            using (var cmd = new SqlCommand(sql, con))
+            {
+                cmd.Parameters.AddWithValue("@Username", username);
+                var result = cmd.ExecuteScalar();
+                return result?.ToString();
+            }
+        }
+
         /// <summary>Validates login credentials. Returns Role string or null if invalid.</summary>
         public string ValidateLogin(string username, string password)
         {

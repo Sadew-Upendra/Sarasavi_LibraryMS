@@ -15,5 +15,7 @@ namespace Sarasavi_Library_MS.Service
         bool UpdateUser(UserDTO dto);
         bool DeleteUser(string userId);
         string ValidateLogin(string username, string password); // returns role or null
+
+        bool UpdatePassword(string userId, string currentPassword, string newPassword);
     }
 }

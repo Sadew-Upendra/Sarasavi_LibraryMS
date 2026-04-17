@@ -1,5 +1,6 @@
 ﻿using Sarasavi_Library_MS.Database;
 using Sarasavi_Library_MS.Forms;
+using Sarasavi_Library_MS.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,10 @@ namespace Sarasavi_Library_MS
                 return;
             }
 
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new MainForm());
             //Application.Run(new UserMainForm());
+            Application.Run(new Splash());
         }
     }
 }

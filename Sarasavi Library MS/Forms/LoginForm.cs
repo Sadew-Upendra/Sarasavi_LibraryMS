@@ -89,7 +89,7 @@ namespace Sarasavi_Library_MS.Forms
 
                 if (role == "admin")
                 {
-                    MainForm mainForm = new MainForm();
+                    MainForm mainForm = new MainForm(username);
                     mainForm.Show();
                     this.Hide();
                 }
@@ -101,7 +101,7 @@ namespace Sarasavi_Library_MS.Forms
                         "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     */
 
-                    UserMainForm userMainForm = new UserMainForm();
+                    UserMainForm userMainForm = new UserMainForm(username);
                     userMainForm.Show();
                     this.Hide();
                 }

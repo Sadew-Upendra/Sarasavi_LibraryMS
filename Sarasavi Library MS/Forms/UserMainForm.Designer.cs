@@ -43,7 +43,6 @@
             this.btnProfile = new FrameworkTest.SATAButton();
             this.btnInquiry = new FrameworkTest.SATAButton();
             this.btnLoan = new FrameworkTest.SATAButton();
-            this.btnReturn = new FrameworkTest.SATAButton();
             this.btnReservations = new FrameworkTest.SATAButton();
             this.btnDashboard = new FrameworkTest.SATAButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sataDragControl1 = new SATAUiFramework.Controls.SATADragControl();
             this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -225,7 +225,6 @@
             this.panel2.Controls.Add(this.btnProfile);
             this.panel2.Controls.Add(this.btnInquiry);
             this.panel2.Controls.Add(this.btnLoan);
-            this.panel2.Controls.Add(this.btnReturn);
             this.panel2.Controls.Add(this.btnReservations);
             this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -330,7 +329,7 @@
             this.btnProfile.ImageTint = System.Drawing.Color.White;
             this.btnProfile.IsToggleButton = false;
             this.btnProfile.IsToggled = false;
-            this.btnProfile.Location = new System.Drawing.Point(14, 498);
+            this.btnProfile.Location = new System.Drawing.Point(14, 432);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.NormalBackground = System.Drawing.Color.Transparent;
@@ -369,7 +368,7 @@
             this.btnInquiry.ImageTint = System.Drawing.Color.White;
             this.btnInquiry.IsToggleButton = false;
             this.btnInquiry.IsToggled = false;
-            this.btnInquiry.Location = new System.Drawing.Point(14, 434);
+            this.btnInquiry.Location = new System.Drawing.Point(14, 368);
             this.btnInquiry.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.NormalBackground = System.Drawing.Color.Transparent;
@@ -424,44 +423,7 @@
             this.btnLoan.TabIndex = 5;
             this.btnLoan.TextAutoCenter = false;
             this.btnLoan.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.ButtonText = "Return Process";
-            this.btnReturn.CheckedBackground = System.Drawing.Color.DodgerBlue;
-            this.btnReturn.CheckedForeColor = System.Drawing.Color.White;
-            this.btnReturn.CheckedImageTint = System.Drawing.Color.White;
-            this.btnReturn.CheckedOutline = System.Drawing.Color.DodgerBlue;
-            this.btnReturn.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
-            this.btnReturn.HoverForeColor = System.Drawing.Color.White;
-            this.btnReturn.HoverImage = null;
-            this.btnReturn.HoverImageTint = System.Drawing.Color.White;
-            this.btnReturn.HoverOutline = System.Drawing.Color.Empty;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.ImageAutoCenter = false;
-            this.btnReturn.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnReturn.ImageOffset = new System.Drawing.Point(6, -1);
-            this.btnReturn.ImageTint = System.Drawing.Color.White;
-            this.btnReturn.IsToggleButton = false;
-            this.btnReturn.IsToggled = false;
-            this.btnReturn.Location = new System.Drawing.Point(14, 306);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnReturn.NormalForeColor = System.Drawing.Color.White;
-            this.btnReturn.NormalOutline = System.Drawing.Color.Empty;
-            this.btnReturn.OutlineThickness = 2F;
-            this.btnReturn.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(95)))), ((int)(((byte)(112)))));
-            this.btnReturn.PressedForeColor = System.Drawing.Color.White;
-            this.btnReturn.PressedImageTint = System.Drawing.Color.White;
-            this.btnReturn.PressedOutline = System.Drawing.Color.Empty;
-            this.btnReturn.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReturn.Size = new System.Drawing.Size(233, 52);
-            this.btnReturn.TabIndex = 4;
-            this.btnReturn.TextAutoCenter = false;
-            this.btnReturn.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnLoan.Click += new System.EventHandler(this.btnLoan_Click);
             // 
             // btnReservations
             // 
@@ -484,7 +446,7 @@
             this.btnReservations.ImageTint = System.Drawing.Color.White;
             this.btnReservations.IsToggleButton = false;
             this.btnReservations.IsToggled = false;
-            this.btnReservations.Location = new System.Drawing.Point(14, 370);
+            this.btnReservations.Location = new System.Drawing.Point(14, 304);
             this.btnReservations.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnReservations.Name = "btnReservations";
             this.btnReservations.NormalBackground = System.Drawing.Color.Transparent;
@@ -500,6 +462,7 @@
             this.btnReservations.TabIndex = 3;
             this.btnReservations.TextAutoCenter = false;
             this.btnReservations.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnReservations.Click += new System.EventHandler(this.btnReservations_Click);
             // 
             // btnDashboard
             // 
@@ -604,6 +567,10 @@
             this.panel1.Size = new System.Drawing.Size(1112, 747);
             this.panel1.TabIndex = 17;
             // 
+            // sataDragControl1
+            // 
+            this.sataDragControl1.SelectControl = this.titleBar;
+            // 
             // UserMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -646,7 +613,6 @@
         private FrameworkTest.SATAButton btnProfile;
         private FrameworkTest.SATAButton btnInquiry;
         private FrameworkTest.SATAButton btnLoan;
-        private FrameworkTest.SATAButton btnReturn;
         private FrameworkTest.SATAButton btnReservations;
         private FrameworkTest.SATAButton btnDashboard;
         private System.Windows.Forms.Label label4;
@@ -655,5 +621,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel panel1;
+        private SATAUiFramework.Controls.SATADragControl sataDragControl1;
     }
 }

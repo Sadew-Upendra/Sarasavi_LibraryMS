@@ -16,5 +16,8 @@ namespace Sarasavi_Library_MS.DTO
         public string Address { get; set; }
         public string UserType { get; set; }
         public int ActiveLoans { get; set; }
+
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }

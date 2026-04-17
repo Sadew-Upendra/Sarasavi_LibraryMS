@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
@@ -36,10 +37,11 @@
             SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius6 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
-            this.sataPanel7 = new SATAUiFramework.SATAPanel();
+            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
+            this.pnlNotifi = new SATAUiFramework.SATAPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblNotifiCount = new System.Windows.Forms.Label();
             this.sataPanel6 = new SATAUiFramework.SATAPanel();
             this.lblOverdueLoans = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -65,9 +67,18 @@
             this.lblTotalBooks = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlNotifications = new System.Windows.Forms.Panel();
+            this.btnRefresh = new FrameworkTest.SATAButton();
+            this.btnClear = new FrameworkTest.SATAButton();
             this.lstNotifications = new System.Windows.Forms.ListBox();
-            this.sataPanel7.SuspendLayout();
+            this.sataPanel8 = new SATAUiFramework.SATAPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnReadNotifications = new FrameworkTest.SATAButton();
+            this.pnlNotifi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.sataPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -82,28 +93,31 @@
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.contentPanel.SuspendLayout();
+            this.pnlNotifications.SuspendLayout();
+            this.sataPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sataPanel7
+            // pnlNotifi
             // 
-            this.sataPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sataPanel7.BackColor2 = System.Drawing.Color.Silver;
-            this.sataPanel7.BorderColor = System.Drawing.Color.Black;
+            this.pnlNotifi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlNotifi.BackColor2 = System.Drawing.Color.Silver;
+            this.pnlNotifi.BorderColor = System.Drawing.Color.Black;
             borderRadius1.BottomLeft = 10;
             borderRadius1.BottomRight = 10;
             borderRadius1.TopLeft = 10;
             borderRadius1.TopRight = 10;
-            this.sataPanel7.BorderRadius = borderRadius1;
-            this.sataPanel7.BorderThickness = 0;
-            this.sataPanel7.Controls.Add(this.label17);
-            this.sataPanel7.Controls.Add(this.pictureBox9);
-            this.sataPanel7.Controls.Add(this.label18);
-            this.sataPanel7.Location = new System.Drawing.Point(554, 190);
-            this.sataPanel7.Margin = new System.Windows.Forms.Padding(20);
-            this.sataPanel7.Name = "sataPanel7";
-            this.sataPanel7.Size = new System.Drawing.Size(494, 130);
-            this.sataPanel7.TabIndex = 21;
+            this.pnlNotifi.BorderRadius = borderRadius1;
+            this.pnlNotifi.BorderThickness = 0;
+            this.pnlNotifi.Controls.Add(this.label17);
+            this.pnlNotifi.Controls.Add(this.pictureBox9);
+            this.pnlNotifi.Controls.Add(this.lblNotifiCount);
+            this.pnlNotifi.Location = new System.Drawing.Point(554, 190);
+            this.pnlNotifi.Margin = new System.Windows.Forms.Padding(20);
+            this.pnlNotifi.Name = "pnlNotifi";
+            this.pnlNotifi.Size = new System.Drawing.Size(494, 130);
+            this.pnlNotifi.TabIndex = 21;
             // 
             // label17
             // 
@@ -127,17 +141,17 @@
             this.pictureBox9.TabIndex = 4;
             this.pictureBox9.TabStop = false;
             // 
-            // label18
+            // lblNotifiCount
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Century Schoolbook", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(204, 89);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 16);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "No notifications";
+            this.lblNotifiCount.AutoSize = true;
+            this.lblNotifiCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblNotifiCount.Font = new System.Drawing.Font("Century Schoolbook", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotifiCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblNotifiCount.Location = new System.Drawing.Point(204, 89);
+            this.lblNotifiCount.Name = "lblNotifiCount";
+            this.lblNotifiCount.Size = new System.Drawing.Size(118, 16);
+            this.lblNotifiCount.TabIndex = 1;
+            this.lblNotifiCount.Text = "No notifications";
             // 
             // sataPanel6
             // 
@@ -460,11 +474,159 @@
             // contentPanel
             // 
             this.contentPanel.BackColor = System.Drawing.Color.Lavender;
-            this.contentPanel.Controls.Add(this.lstNotifications);
-            this.contentPanel.Location = new System.Drawing.Point(-1, 450);
+            this.contentPanel.Controls.Add(this.pnlNotifications);
+            this.contentPanel.Controls.Add(this.sataPanel8);
+            this.contentPanel.Location = new System.Drawing.Point(-1, 446);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1110, 211);
+            this.contentPanel.Size = new System.Drawing.Size(1110, 215);
             this.contentPanel.TabIndex = 22;
+            // 
+            // pnlNotifications
+            // 
+            this.pnlNotifications.Controls.Add(this.btnRefresh);
+            this.pnlNotifications.Controls.Add(this.btnClear);
+            this.pnlNotifications.Controls.Add(this.lstNotifications);
+            this.pnlNotifications.Location = new System.Drawing.Point(13, 14);
+            this.pnlNotifications.Name = "pnlNotifications";
+            this.pnlNotifications.Size = new System.Drawing.Size(735, 188);
+            this.pnlNotifications.TabIndex = 25;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ButtonText = "Refresh";
+            this.btnRefresh.CheckedBackground = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.CheckedForeColor = System.Drawing.Color.White;
+            this.btnRefresh.CheckedImageTint = System.Drawing.Color.White;
+            this.btnRefresh.CheckedOutline = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.HoverBackground = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.HoverForeColor = System.Drawing.Color.White;
+            this.btnRefresh.HoverImage = null;
+            this.btnRefresh.HoverImageTint = System.Drawing.Color.White;
+            this.btnRefresh.HoverOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.Image = null;
+            this.btnRefresh.ImageAutoCenter = true;
+            this.btnRefresh.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnRefresh.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRefresh.ImageTint = System.Drawing.Color.White;
+            this.btnRefresh.IsToggleButton = false;
+            this.btnRefresh.IsToggled = false;
+            this.btnRefresh.Location = new System.Drawing.Point(614, 137);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.NormalBackground = System.Drawing.Color.SteelBlue;
+            this.btnRefresh.NormalForeColor = System.Drawing.Color.White;
+            this.btnRefresh.NormalOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.OutlineThickness = 2F;
+            this.btnRefresh.PressedBackground = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.PressedForeColor = System.Drawing.Color.White;
+            this.btnRefresh.PressedImageTint = System.Drawing.Color.White;
+            this.btnRefresh.PressedOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Size = new System.Drawing.Size(100, 40);
+            this.btnRefresh.TabIndex = 44;
+            this.btnRefresh.TextAutoCenter = true;
+            this.btnRefresh.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.ButtonText = "Clear";
+            this.btnClear.CheckedBackground = System.Drawing.Color.DodgerBlue;
+            this.btnClear.CheckedForeColor = System.Drawing.Color.White;
+            this.btnClear.CheckedImageTint = System.Drawing.Color.White;
+            this.btnClear.CheckedOutline = System.Drawing.Color.DodgerBlue;
+            this.btnClear.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.HoverBackground = System.Drawing.Color.Chocolate;
+            this.btnClear.HoverForeColor = System.Drawing.Color.White;
+            this.btnClear.HoverImage = null;
+            this.btnClear.HoverImageTint = System.Drawing.Color.White;
+            this.btnClear.HoverOutline = System.Drawing.Color.Empty;
+            this.btnClear.Image = null;
+            this.btnClear.ImageAutoCenter = true;
+            this.btnClear.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnClear.ImageTint = System.Drawing.Color.White;
+            this.btnClear.IsToggleButton = false;
+            this.btnClear.IsToggled = false;
+            this.btnClear.Location = new System.Drawing.Point(497, 137);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NormalBackground = System.Drawing.Color.SaddleBrown;
+            this.btnClear.NormalForeColor = System.Drawing.Color.White;
+            this.btnClear.NormalOutline = System.Drawing.Color.Empty;
+            this.btnClear.OutlineThickness = 2F;
+            this.btnClear.PressedBackground = System.Drawing.Color.Chocolate;
+            this.btnClear.PressedForeColor = System.Drawing.Color.White;
+            this.btnClear.PressedImageTint = System.Drawing.Color.White;
+            this.btnClear.PressedOutline = System.Drawing.Color.Empty;
+            this.btnClear.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnClear.Size = new System.Drawing.Size(100, 40);
+            this.btnClear.TabIndex = 43;
+            this.btnClear.TextAutoCenter = true;
+            this.btnClear.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // lstNotifications
+            // 
+            this.lstNotifications.FormattingEnabled = true;
+            this.lstNotifications.ItemHeight = 16;
+            this.lstNotifications.Location = new System.Drawing.Point(14, 8);
+            this.lstNotifications.Name = "lstNotifications";
+            this.lstNotifications.Size = new System.Drawing.Size(700, 116);
+            this.lstNotifications.TabIndex = 23;
+            this.lstNotifications.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.LstNotifications_MeasureItem);
+            // 
+            // sataPanel8
+            // 
+            this.sataPanel8.BackColor = System.Drawing.Color.AliceBlue;
+            this.sataPanel8.BackColor2 = System.Drawing.Color.AliceBlue;
+            this.sataPanel8.BorderColor = System.Drawing.Color.Black;
+            borderRadius8.BottomLeft = 10;
+            borderRadius8.BottomRight = 10;
+            borderRadius8.TopLeft = 10;
+            borderRadius8.TopRight = 10;
+            this.sataPanel8.BorderRadius = borderRadius8;
+            this.sataPanel8.BorderThickness = 0;
+            this.sataPanel8.Controls.Add(this.pictureBox1);
+            this.sataPanel8.Controls.Add(this.lblTime);
+            this.sataPanel8.Controls.Add(this.lblDate);
+            this.sataPanel8.Location = new System.Drawing.Point(806, 105);
+            this.sataPanel8.Name = "sataPanel8";
+            this.sataPanel8.Size = new System.Drawing.Size(269, 84);
+            this.sataPanel8.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(210, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(22, 49);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(40, 18);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "Time";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(21, 23);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(39, 18);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "Date";
             // 
             // flowLayoutPanel1
             // 
@@ -474,20 +636,55 @@
             this.flowLayoutPanel1.Controls.Add(this.sataPanel4);
             this.flowLayoutPanel1.Controls.Add(this.sataPanel5);
             this.flowLayoutPanel1.Controls.Add(this.sataPanel6);
-            this.flowLayoutPanel1.Controls.Add(this.sataPanel7);
+            this.flowLayoutPanel1.Controls.Add(this.pnlNotifi);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1071, 356);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // lstNotifications
+            // timer1
             // 
-            this.lstNotifications.FormattingEnabled = true;
-            this.lstNotifications.ItemHeight = 16;
-            this.lstNotifications.Location = new System.Drawing.Point(946, 34);
-            this.lstNotifications.Name = "lstNotifications";
-            this.lstNotifications.Size = new System.Drawing.Size(120, 84);
-            this.lstNotifications.TabIndex = 23;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnReadNotifications
+            // 
+            this.btnReadNotifications.ButtonText = "Read";
+            this.btnReadNotifications.CheckedBackground = System.Drawing.Color.DodgerBlue;
+            this.btnReadNotifications.CheckedForeColor = System.Drawing.Color.White;
+            this.btnReadNotifications.CheckedImageTint = System.Drawing.Color.White;
+            this.btnReadNotifications.CheckedOutline = System.Drawing.Color.DodgerBlue;
+            this.btnReadNotifications.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReadNotifications.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReadNotifications.HoverBackground = System.Drawing.Color.ForestGreen;
+            this.btnReadNotifications.HoverForeColor = System.Drawing.Color.White;
+            this.btnReadNotifications.HoverImage = null;
+            this.btnReadNotifications.HoverImageTint = System.Drawing.Color.White;
+            this.btnReadNotifications.HoverOutline = System.Drawing.Color.Empty;
+            this.btnReadNotifications.Image = null;
+            this.btnReadNotifications.ImageAutoCenter = true;
+            this.btnReadNotifications.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnReadNotifications.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnReadNotifications.ImageTint = System.Drawing.Color.White;
+            this.btnReadNotifications.IsToggleButton = false;
+            this.btnReadNotifications.IsToggled = false;
+            this.btnReadNotifications.Location = new System.Drawing.Point(947, 377);
+            this.btnReadNotifications.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnReadNotifications.Name = "btnReadNotifications";
+            this.btnReadNotifications.NormalBackground = System.Drawing.Color.MediumSeaGreen;
+            this.btnReadNotifications.NormalForeColor = System.Drawing.Color.White;
+            this.btnReadNotifications.NormalOutline = System.Drawing.Color.Empty;
+            this.btnReadNotifications.OutlineThickness = 2F;
+            this.btnReadNotifications.PressedBackground = System.Drawing.Color.LightGreen;
+            this.btnReadNotifications.PressedForeColor = System.Drawing.Color.White;
+            this.btnReadNotifications.PressedImageTint = System.Drawing.Color.White;
+            this.btnReadNotifications.PressedOutline = System.Drawing.Color.Empty;
+            this.btnReadNotifications.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnReadNotifications.Size = new System.Drawing.Size(127, 49);
+            this.btnReadNotifications.TabIndex = 42;
+            this.btnReadNotifications.TextAutoCenter = true;
+            this.btnReadNotifications.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnReadNotifications.Click += new System.EventHandler(this.btnReadNotifications_Click);
             // 
             // Dashboard
             // 
@@ -495,14 +692,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1108, 660);
+            this.Controls.Add(this.btnReadNotifications);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.contentPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dashboard";
-            this.sataPanel7.ResumeLayout(false);
-            this.sataPanel7.PerformLayout();
+            this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.pnlNotifi.ResumeLayout(false);
+            this.pnlNotifi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.sataPanel6.ResumeLayout(false);
             this.sataPanel6.PerformLayout();
@@ -523,6 +722,10 @@
             this.sataPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.contentPanel.ResumeLayout(false);
+            this.pnlNotifications.ResumeLayout(false);
+            this.sataPanel8.ResumeLayout(false);
+            this.sataPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -530,10 +733,10 @@
 
         #endregion
 
-        private SATAUiFramework.SATAPanel sataPanel7;
+        private SATAUiFramework.SATAPanel pnlNotifi;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblNotifiCount;
         private SATAUiFramework.SATAPanel sataPanel6;
         private System.Windows.Forms.Label lblOverdueLoans;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -560,6 +763,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private SATAUiFramework.SATAPanel sataPanel8;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListBox lstNotifications;
+        private FrameworkTest.SATAButton btnRefresh;
+        private FrameworkTest.SATAButton btnClear;
+        private FrameworkTest.SATAButton btnReadNotifications;
+        private System.Windows.Forms.Panel pnlNotifications;
     }
 }

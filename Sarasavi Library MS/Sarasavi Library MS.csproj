@@ -140,6 +140,7 @@
     <Compile Include="DTO\CopyDTO.cs" />
     <Compile Include="DTO\InquiryResultDTO.cs" />
     <Compile Include="DTO\LoanDTO.cs" />
+    <Compile Include="DTO\NotificationDTO.cs" />
     <Compile Include="DTO\ReservationDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Entity\Book.cs" />
@@ -160,6 +161,12 @@
     </Compile>
     <Compile Include="Forms\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserLoanDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserLoanDetailsForm.Designer.cs">
+      <DependentUpon>UserLoanDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserMainForm.cs">
       <SubType>Form</SubType>
@@ -203,12 +210,6 @@
     <Compile Include="Forms\BookForm.Designer.cs">
       <DependentUpon>BookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SataForms\UserForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SataForms\UserForm1.Designer.cs">
-      <DependentUpon>UserForm1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,12 +233,14 @@
     <Compile Include="Service\IBookService.cs" />
     <Compile Include="Service\IInquiryService.cs" />
     <Compile Include="Service\ILoanService.cs" />
+    <Compile Include="Service\INotificationService.cs" />
     <Compile Include="Service\IReservationService.cs" />
     <Compile Include="Service\IReturnService.cs" />
     <Compile Include="Service\IUserService.cs" />
     <Compile Include="Service\ServiceImpl\BookServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\InquiryServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\LoanServiceImpl.cs" />
+    <Compile Include="Service\ServiceImpl\NotificationServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\ReservationServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\ReturnServiceImpl.cs" />
     <Compile Include="Service\ServiceImpl\UserServiceImpl.cs" />
@@ -254,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserLoanDetailsForm.resx">
+      <DependentUpon>UserLoanDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserMainForm.resx">
       <DependentUpon>UserMainForm.cs</DependentUpon>
@@ -275,9 +281,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookForm.resx">
       <DependentUpon>BookForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SataForms\UserForm1.resx">
-      <DependentUpon>UserForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>

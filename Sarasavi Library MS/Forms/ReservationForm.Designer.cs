@@ -34,20 +34,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtUserID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBookID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReserveBook = new FrameworkTest.SATAButton();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvReservations = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlData = new System.Windows.Forms.Panel();
             this.btnCancelRes = new FrameworkTest.SATAButton();
-            this.txtBookID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtUserID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservations)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlData.SuspendLayout();
             this.SuspendLayout();
             // 
             // sataPanel1
@@ -72,6 +72,65 @@
             this.sataPanel1.Name = "sataPanel1";
             this.sataPanel1.Size = new System.Drawing.Size(1043, 245);
             this.sataPanel1.TabIndex = 18;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Location = new System.Drawing.Point(685, 211);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(44, 16);
+            this.lblStatus.TabIndex = 39;
+            this.lblStatus.Text = "Status";
+            this.lblStatus.Visible = false;
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.BorderColor = System.Drawing.Color.LightGray;
+            this.txtUserID.BorderRadius = 5;
+            this.txtUserID.BorderThickness = 2;
+            this.txtUserID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUserID.DefaultText = "";
+            this.txtUserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserID.FocusedState.BorderColor = System.Drawing.Color.CadetBlue;
+            this.txtUserID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.ForeColor = System.Drawing.Color.Black;
+            this.txtUserID.HoverState.BorderColor = System.Drawing.Color.CadetBlue;
+            this.txtUserID.Location = new System.Drawing.Point(156, 96);
+            this.txtUserID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtUserID.PlaceholderText = "Ex: U-0001";
+            this.txtUserID.SelectedText = "";
+            this.txtUserID.Size = new System.Drawing.Size(313, 43);
+            this.txtUserID.TabIndex = 38;
+            // 
+            // txtBookID
+            // 
+            this.txtBookID.BorderColor = System.Drawing.Color.LightGray;
+            this.txtBookID.BorderRadius = 5;
+            this.txtBookID.BorderThickness = 2;
+            this.txtBookID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBookID.DefaultText = "";
+            this.txtBookID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBookID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBookID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBookID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBookID.FocusedState.BorderColor = System.Drawing.Color.CadetBlue;
+            this.txtBookID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookID.ForeColor = System.Drawing.Color.Black;
+            this.txtBookID.HoverState.BorderColor = System.Drawing.Color.CadetBlue;
+            this.txtBookID.Location = new System.Drawing.Point(688, 96);
+            this.txtBookID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtBookID.PlaceholderText = "Ex: B0001";
+            this.txtBookID.SelectedText = "";
+            this.txtBookID.Size = new System.Drawing.Size(313, 43);
+            this.txtBookID.TabIndex = 37;
             // 
             // label3
             // 
@@ -213,16 +272,16 @@
             this.dgvReservations.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvReservations.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // panel1
+            // pnlData
             // 
-            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Controls.Add(this.btnCancelRes);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dgvReservations);
-            this.panel1.Location = new System.Drawing.Point(0, 306);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1108, 354);
-            this.panel1.TabIndex = 24;
+            this.pnlData.BackColor = System.Drawing.Color.AliceBlue;
+            this.pnlData.Controls.Add(this.btnCancelRes);
+            this.pnlData.Controls.Add(this.label4);
+            this.pnlData.Controls.Add(this.dgvReservations);
+            this.pnlData.Location = new System.Drawing.Point(0, 306);
+            this.pnlData.Name = "pnlData";
+            this.pnlData.Size = new System.Drawing.Size(1108, 354);
+            this.pnlData.TabIndex = 24;
             // 
             // btnCancelRes
             // 
@@ -263,72 +322,13 @@
             this.btnCancelRes.TextOffset = new System.Drawing.Point(0, 0);
             this.btnCancelRes.Click += new System.EventHandler(this.btnCancelRes_Click);
             // 
-            // txtBookID
-            // 
-            this.txtBookID.BorderColor = System.Drawing.Color.LightGray;
-            this.txtBookID.BorderRadius = 5;
-            this.txtBookID.BorderThickness = 2;
-            this.txtBookID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBookID.DefaultText = "";
-            this.txtBookID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBookID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBookID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBookID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBookID.FocusedState.BorderColor = System.Drawing.Color.CadetBlue;
-            this.txtBookID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookID.ForeColor = System.Drawing.Color.Black;
-            this.txtBookID.HoverState.BorderColor = System.Drawing.Color.CadetBlue;
-            this.txtBookID.Location = new System.Drawing.Point(688, 96);
-            this.txtBookID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtBookID.Name = "txtBookID";
-            this.txtBookID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtBookID.PlaceholderText = "Ex: B0001";
-            this.txtBookID.SelectedText = "";
-            this.txtBookID.Size = new System.Drawing.Size(313, 43);
-            this.txtBookID.TabIndex = 37;
-            // 
-            // txtUserID
-            // 
-            this.txtUserID.BorderColor = System.Drawing.Color.LightGray;
-            this.txtUserID.BorderRadius = 5;
-            this.txtUserID.BorderThickness = 2;
-            this.txtUserID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserID.DefaultText = "";
-            this.txtUserID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtUserID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtUserID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUserID.FocusedState.BorderColor = System.Drawing.Color.CadetBlue;
-            this.txtUserID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.ForeColor = System.Drawing.Color.Black;
-            this.txtUserID.HoverState.BorderColor = System.Drawing.Color.CadetBlue;
-            this.txtUserID.Location = new System.Drawing.Point(156, 96);
-            this.txtUserID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUserID.PlaceholderText = "Ex: U-0001";
-            this.txtUserID.SelectedText = "";
-            this.txtUserID.Size = new System.Drawing.Size(313, 43);
-            this.txtUserID.TabIndex = 38;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Location = new System.Drawing.Point(685, 211);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(44, 16);
-            this.lblStatus.TabIndex = 39;
-            this.lblStatus.Text = "Status";
-            this.lblStatus.Visible = false;
-            // 
             // ReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1108, 660);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlData);
             this.Controls.Add(this.sataPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservationForm";
@@ -336,8 +336,8 @@
             this.sataPanel1.ResumeLayout(false);
             this.sataPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservations)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlData.ResumeLayout(false);
+            this.pnlData.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2DataGridView dgvReservations;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlData;
         private FrameworkTest.SATAButton btnCancelRes;
         private Guna.UI2.WinForms.Guna2TextBox txtUserID;
         private Guna.UI2.WinForms.Guna2TextBox txtBookID;

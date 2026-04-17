@@ -24,15 +24,18 @@ namespace Sarasavi_Library_MS.Forms
     ///   dgvReservations — DataGridView showing all reservations
     ///   btnCancelRes    — cancels selected reservation
     ///   lblStatus
-    /// </summary>
-    
+    /// </summary
+
     public partial class ReservationForm : Form
     {
         private readonly IReservationService _reservationService = new ReservationServiceImpl();
+        private string _currentUserName;
 
-        public ReservationForm()
+        public ReservationForm(string userName)
         {
             InitializeComponent();
+
+            this._currentUserName = userName;
             LoadReservations();
         }
 
@@ -124,6 +127,12 @@ namespace Sarasavi_Library_MS.Forms
             try
             {
                 var reservations = _reservationService.GetAllReservations();
+
+                if (_currentUserName.ToLower() != "admin")
+                {
+                    reservations = reservations.FindAll(r => r.UserID == _currentUserName);
+                }
+
                 dgvReservations.DataSource = null;
                 dgvReservations.DataSource = reservations;
 
@@ -147,7 +156,10 @@ namespace Sarasavi_Library_MS.Forms
                         : Color.Gray;
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                ShowStatus("Error loading data: " + ex.Message, Color.OrangeRed);
+            }
         }
 
         // -- Helpers ------------------------------------------------

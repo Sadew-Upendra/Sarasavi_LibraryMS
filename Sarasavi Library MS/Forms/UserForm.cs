@@ -279,6 +279,8 @@ namespace Sarasavi_Library_MS.Forms
             SetColumnHeader("FullName", "Full Name");
             SetColumnHeader("NIC", "NIC Number");
             HideColumn("ActiveLoans");
+            HideColumn("UserName");
+            HideColumn("Password");
         }
 
         private void btnClear_Click(object sender, EventArgs e) => ClearForm();
